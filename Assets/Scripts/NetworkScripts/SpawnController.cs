@@ -25,6 +25,14 @@ public class SpawnController : MonoBehaviour, INetworkRunnerCallbacks
 
     public void OnInput(NetworkRunner runner, NetworkInput input)
     {
+        if (NetworkPlayer.local != null)
+        {
+            CollectInputHandleNetwork collectInputHandleNetwork = NetworkPlayer.local.GetComponent<CollectInputHandleNetwork>();
+            if (collectInputHandleNetwork != null)
+            {
+                input.Set(collectInputHandleNetwork.GetInputNetwork());
+            }
+        }
     }
 
     public void OnConnectedToServer(NetworkRunner runner)

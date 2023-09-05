@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Fusion;
 
-public struct InputNetwork :INetworkInput
+public struct InputNetwork : INetworkInput
 {
     public Vector2 Direction;
 }
@@ -19,5 +19,5 @@ public class CollectInputHandleNetwork : MonoBehaviour
         InputNetwork inputNetwork = new InputNetwork();
         inputNetwork.Direction = InputData;
         return inputNetwork;
-    }    
+    }
 }
